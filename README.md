@@ -1,6 +1,6 @@
 # Showcase Template [![npm](https://badgen.net/npm/v/@gorhom/showcase-template)](https://www.npmjs.com/package/@gorhom/showcase-template)
 
-A template that helps developers to showcase their's amazing libraries examples.
+A template that helps developers to showcase their amazing libraries examples.
 
 <p align="center">
 <img src="./preview.png">
