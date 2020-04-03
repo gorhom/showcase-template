@@ -17,7 +17,7 @@ interface ShowcaseProps {
     username: string;
     url: string;
   };
-  theme: ThemeType;
+  theme?: ThemeType;
   handleOnPress: (slug: string) => void;
 }
 
