@@ -6,11 +6,12 @@ export const createStyles = (theme: ThemeType) =>
     root: {
       backgroundColor: theme === 'dark' ? '#222' : '#CCC',
       flex: 1,
+      justifyContent: 'flex-end',
       borderRadius: 12,
+      minHeight: 96,
     },
     container: {
       padding: 12,
-      paddingTop: 56,
     },
     name: {
       color: theme === 'dark' ? 'white' : 'black',
