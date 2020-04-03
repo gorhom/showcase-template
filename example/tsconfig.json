@@ -2,7 +2,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@gorhom/showcase-template": ["./src/index"]
+      "@gorhom/showcase-template": ["../src/index"]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
