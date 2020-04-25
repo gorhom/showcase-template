@@ -1,10 +1,15 @@
-# Showcase Template [![npm](https://badgen.net/npm/v/@gorhom/showcase-template)](https://www.npmjs.com/package/@gorhom/showcase-template)
+<div align="center">
+<h1>Showcase Template</h1>
+
+[![npm](https://badgen.net/npm/v/@gorhom/showcase-template)](https://www.npmjs.com/package/@gorhom/showcase-template) [![npm](https://badgen.net/npm/license/@gorhom/showcase-template)](https://www.npmjs.com/package/@gorhom/showcase-template) [![npm](https://badgen.net/npm/types/@gorhom/showcase-template)](https://www.npmjs.com/package/@gorhom/showcase-template)
+
+<img src="./preview.png">
 
 A React Native template that helps developers to showcase their amazing libraries examples.
 
-<p align="center">
-<img src="./preview.png">
-</p>
+</div>
+
+---
 
 ## Installation
 
@@ -23,16 +28,34 @@ import Showcase from '@gorhom/showcase-template';
 
 const data = [
   {
-    name: 'Default',
-    slug: 'default',
+    title: 'Group 1',
+    data: [
+      {
+        name: 'Default',
+        slug: 'default',
+      },
+      {
+        name: 'Example A',
+        slug: 'example-a',
+      },
+      {
+        name: 'Example B',
+        slug: 'example-b',
+      },
+    ],
   },
   {
-    name: 'Example A',
-    slug: 'example-a',
-  },
-  {
-    name: 'Example B',
-    slug: 'example-b',
+    title: 'Group 2',
+    data: [
+      {
+        name: 'Example C',
+        slug: 'example-c',
+      },
+      {
+        name: 'Example D',
+        slug: 'example-d',
+      },
+    ],
   },
 ];
 
@@ -66,3 +89,9 @@ export default function App() {
 ## License
 
 MIT
+
+---
+
+<p align="center">
+<a href="https://twitter.com/gorhom"><img src="./logo.png"></a>
+</p>

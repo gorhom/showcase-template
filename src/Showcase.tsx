@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { FlatList, SafeAreaView, StatusBar, View } from 'react-native';
 
 import ShowcaseHeader from './components/header';
 import ShowcaseFooter from './components/footer';
-import ShowcaseTile from './components/tile';
-import { ExampleType, ThemeType } from './types';
+import ShowcaseGroup from './components/group';
 
+import { ExampleSectionType, ExampleType, ThemeType } from './types';
 import { createStyles } from './styles';
 
 interface ShowcaseProps {
   name: string;
   description: string;
   version: string;
-  data: ExampleType[];
+  data: Array<ExampleSectionType | ExampleType>;
   author: {
     username: string;
     url: string;
@@ -21,20 +21,39 @@ interface ShowcaseProps {
   handleOnPress: (slug: string) => void;
 }
 
+export const isSectioned = (data: any): data is ExampleSectionType =>
+  data.title !== undefined;
+
 const Showcase = (props: ShowcaseProps) => {
   const {
     name,
     description,
     version,
     author,
-    data,
+    data: _data,
     theme = 'dark',
     handleOnPress,
   } = props;
 
   // variables
-  const styles = createStyles(theme);
-  const statusBarStyle = theme === 'dark' ? 'light-content' : 'dark-content';
+  const styles = useMemo(() => createStyles(theme), [theme]);
+  const statusBarStyle = useMemo(
+    () => (theme === 'dark' ? 'light-content' : 'dark-content'),
+    [theme]
+  );
+  const data: Array<ExampleSectionType> = useMemo(() => {
+    // @ts-ignore
+    if (_data.length > 0 && _data[0].title === undefined) {
+      return [
+        {
+          title: '',
+          data: _data as Array<ExampleType>,
+        },
+      ];
+    } else {
+      return _data as Array<ExampleSectionType>;
+    }
+  }, [_data]);
 
   // renders
   const renderHeader = () => {
@@ -54,23 +73,22 @@ const Showcase = (props: ShowcaseProps) => {
     item,
     index,
   }: {
-    item: ExampleType;
+    item: ExampleSectionType;
     index: number;
   }) => {
     return (
-      <ShowcaseTile
-        key={`item-${item.slug}`}
-        index={index}
+      <ShowcaseGroup
+        key={`group-#${index}-${item.title}`}
+        theme={theme}
         handleOnPress={handleOnPress}
         {...item}
-        theme={theme}
-        isLastItem={index === data.length - 1}
       />
     );
   };
   const renderSeparator = () => {
     return <View style={styles.separator} />;
   };
+
   return (
     <SafeAreaView style={styles.root}>
       <StatusBar barStyle={statusBarStyle} />
@@ -78,9 +96,8 @@ const Showcase = (props: ShowcaseProps) => {
         style={styles.container}
         contentContainerStyle={styles.contentContainer}
         data={data}
-        numColumns={2}
         stickyHeaderIndices={[0]}
-        keyExtractor={(item) => item.slug}
+        keyExtractor={(item) => item.title}
         renderItem={renderItem}
         ListHeaderComponent={renderHeader}
         ListFooterComponent={renderFooter}

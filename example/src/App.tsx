@@ -4,23 +4,42 @@ import Showcase from '@gorhom/showcase-template';
 
 const data = [
   {
-    name: 'Default',
-    slug: 'default',
+    title: 'Group 1',
+    data: [
+      {
+        name: 'Default',
+        slug: 'default',
+      },
+      {
+        name: 'Example A',
+        slug: 'example-a',
+      },
+      {
+        name: 'Example B',
+        slug: 'example-b',
+      },
+    ],
   },
   {
-    name: 'Example A',
-    slug: 'example-a',
-  },
-  {
-    name: 'Example B',
-    slug: 'example-b',
+    title: 'Group 2',
+    data: [
+      {
+        name: 'Example C',
+        slug: 'example-c',
+      },
+      {
+        name: 'Example D',
+        slug: 'example-d',
+      },
+    ],
   },
 ];
+
 export default function App() {
   const handleOnPress = (slug: string) => Alert.alert('Example Selected', slug);
   return (
     <Showcase
-      theme="light"
+      theme="dark"
       version="0.0.0"
       name="Awesome Library"
       description="It can do anything 🤯"

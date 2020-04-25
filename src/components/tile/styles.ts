@@ -1,14 +1,19 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 import { ThemeType } from '../../types';
 
-export const createStyles = (theme: ThemeType) =>
+const SCREEN_WIDTH = Dimensions.get('window').width;
+const PARENT_CONTAINER_WIDTH = SCREEN_WIDTH - 24 * 2
+const ITEM_WIDTH = PARENT_CONTAINER_WIDTH / 2 - 6;
+
+export const createStyles = (theme: ThemeType, isLarge: boolean) =>
   StyleSheet.create({
     root: {
       backgroundColor: theme === 'dark' ? '#222' : '#CCC',
-      flex: 1,
       justifyContent: 'flex-end',
       borderRadius: 12,
       minHeight: 96,
+      width: isLarge ? PARENT_CONTAINER_WIDTH : ITEM_WIDTH,
+      marginVertical: 6,
     },
     container: {
       padding: 12,
