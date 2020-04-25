@@ -4,7 +4,7 @@ import Showcase from '@gorhom/showcase-template';
 
 const data = [
   {
-    title: 'Group A',
+    title: 'Group 1',
     data: [
       {
         name: 'Default',
@@ -21,7 +21,7 @@ const data = [
     ],
   },
   {
-    title: 'Group B',
+    title: 'Group 2',
     data: [
       {
         name: 'Example C',
