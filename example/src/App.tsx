@@ -33,6 +33,31 @@ const data = [
       },
     ],
   },
+  {
+    title: 'Group 3',
+    data: [
+      {
+        name: 'Example E',
+        slug: 'example-e',
+      },
+      {
+        name: 'Example F',
+        slug: 'example-f',
+      },
+      {
+        name: 'Example G',
+        slug: 'example-g',
+      },
+      {
+        name: 'Example H',
+        slug: 'example-h',
+      },
+      {
+        name: 'Example I',
+        slug: 'example-i',
+      },
+    ],
+  },
 ];
 
 export default function App() {

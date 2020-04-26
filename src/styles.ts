@@ -12,7 +12,6 @@ export const createStyles = (theme: ThemeType) =>
     },
     contentContainer: {
       padding: 24,
-      flex: 1,
     },
     separator: {
       width: 12,
