@@ -10,6 +10,7 @@ export const createStyles = (theme: ThemeType) =>
     },
     title: {
       fontWeight: '600',
+      textTransform: 'uppercase',
       marginTop: 12,
       marginBottom: 6,
       color: theme === 'dark' ? '#CCC' : '#222',
