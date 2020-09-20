@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Insets } from 'react-native';
 import { createStyles } from './styles';
 import { ThemeType } from '../../types';
 
@@ -8,14 +8,15 @@ interface ShowcaseHeaderProps {
   name: string;
   description: string;
   theme: ThemeType;
+  safeInsets?: Insets;
 }
 
 const ShowcaseHeader = (props: ShowcaseHeaderProps) => {
   // props
-  const { version = '0.0.0', name, description, theme } = props;
+  const { version = '0.0.0', name, description, theme, safeInsets } = props;
 
   // variables
-  const styles = createStyles(theme);
+  const styles = createStyles(theme, safeInsets);
 
   // renders
   return (

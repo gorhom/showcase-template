@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { FlatList, SafeAreaView, StatusBar, View } from 'react-native';
+import { FlatList, Insets, StatusBar, View } from 'react-native';
 
 import ShowcaseHeader from './components/header';
 import ShowcaseFooter from './components/footer';
@@ -18,6 +18,7 @@ interface ShowcaseProps {
     url: string;
   };
   theme?: ThemeType;
+  safeInsets?: Insets;
   handleOnPress: (slug: string) => void;
 }
 
@@ -32,11 +33,15 @@ const Showcase = (props: ShowcaseProps) => {
     author,
     data: _data,
     theme = 'dark',
+    safeInsets,
     handleOnPress,
   } = props;
 
   // variables
-  const styles = useMemo(() => createStyles(theme), [theme]);
+  const styles = useMemo(() => createStyles(theme, safeInsets), [
+    theme,
+    safeInsets,
+  ]);
   const statusBarStyle = useMemo(
     () => (theme === 'dark' ? 'light-content' : 'dark-content'),
     [theme]
@@ -63,6 +68,7 @@ const Showcase = (props: ShowcaseProps) => {
         description={description}
         version={version}
         theme={theme}
+        safeInsets={safeInsets}
       />
     );
   };
@@ -90,7 +96,7 @@ const Showcase = (props: ShowcaseProps) => {
   };
 
   return (
-    <SafeAreaView style={styles.root}>
+    <>
       <StatusBar barStyle={statusBarStyle} />
       <FlatList
         style={styles.container}
@@ -103,7 +109,7 @@ const Showcase = (props: ShowcaseProps) => {
         ListFooterComponent={renderFooter}
         ItemSeparatorComponent={renderSeparator}
       />
-    </SafeAreaView>
+    </>
   );
 };
 

@@ -1,17 +1,15 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Insets } from 'react-native';
 import { ThemeType } from './types';
 
-export const createStyles = (theme: ThemeType) =>
+export const createStyles = (theme: ThemeType, safeInsets?: Insets) =>
   StyleSheet.create({
-    root: {
-      backgroundColor: theme === 'dark' ? 'black' : 'white',
-      flex: 1,
-    },
     container: {
       flex: 1,
+      backgroundColor: theme === 'dark' ? 'black' : 'white',
     },
     contentContainer: {
-      padding: 24,
+      paddingHorizontal: 24,
+      paddingBottom: safeInsets?.bottom ?? 0,
     },
     separator: {
       width: 12,

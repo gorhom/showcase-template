@@ -1,11 +1,12 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Insets } from 'react-native';
 import { ThemeType } from '../../types';
 
-export const createStyles = (theme: ThemeType) =>
+export const createStyles = (theme: ThemeType, safeInsets?: Insets) =>
   StyleSheet.create({
     container: {
       backgroundColor: theme === 'dark' ? 'black' : 'white',
       paddingBottom: 24,
+      paddingTop: safeInsets?.top ?? 0,
     },
     version: {
       alignSelf: 'flex-start',
