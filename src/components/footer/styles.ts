@@ -4,7 +4,7 @@ import { ThemeType } from '../../types';
 export const createStyles = (theme: ThemeType) =>
   StyleSheet.create({
     container: {
-      paddingVertical: 24,
+      paddingTop: 24,
     },
     name: {
       color: theme === 'dark' ? 'white' : 'black',

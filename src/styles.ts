@@ -9,7 +9,7 @@ export const createStyles = (theme: ThemeType, safeInsets?: Insets) =>
     },
     contentContainer: {
       paddingHorizontal: 24,
-      paddingBottom: safeInsets?.bottom ?? 0,
+      paddingBottom: Math.max(safeInsets?.bottom ?? 0, 24),
     },
     separator: {
       width: 12,
