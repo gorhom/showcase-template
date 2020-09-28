@@ -9,7 +9,7 @@ export const createStyles = (theme: ThemeType) =>
       justifyContent: 'space-between',
     },
     title: {
-      fontWeight: '600',
+      fontWeight: '800',
       textTransform: 'uppercase',
       marginTop: 12,
       marginBottom: 6,

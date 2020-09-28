@@ -21,7 +21,7 @@ export const createStyles = (theme: ThemeType, isLarge: boolean) =>
     name: {
       color: theme === 'dark' ? 'white' : 'black',
       fontSize: 20,
-      fontWeight: '500',
+      fontWeight: '400',
       lineHeight: 26,
     },
   });
