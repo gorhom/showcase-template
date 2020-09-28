@@ -6,7 +6,7 @@ export const createStyles = (theme: ThemeType, safeInsets?: Insets) =>
     container: {
       backgroundColor: theme === 'dark' ? 'black' : 'white',
       paddingBottom: 24,
-      paddingTop: safeInsets?.top ?? 0,
+      paddingTop: (safeInsets?.top ?? 0) + 24,
     },
     version: {
       alignSelf: 'flex-start',
