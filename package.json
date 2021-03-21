@@ -13,7 +13,8 @@
   "scripts": {
     "typescript": "tsc --noEmit",
     "lint": "eslint --ext .js,.ts,.tsx . --fix",
-    "build": "bob build",
+    "build": "bob build && yarn copy-dts",
+    "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" lib/typescript",
     "release": "release-it",
     "example": "yarn --cwd example",
     "pods": "cd example/ios && node -e \"process.exit(require('os').platform() === 'darwin')\" || pod install",
@@ -43,6 +44,7 @@
     "@types/react": "^16.9.32",
     "@types/react-native": "0.63.52",
     "auto-changelog": "^2.2.1",
+    "copyfiles": "^2.4.1",
     "eslint": "^7.22.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
