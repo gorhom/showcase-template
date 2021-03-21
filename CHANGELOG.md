@@ -1,6 +1,13 @@
 # Changelog
 
-## [v2.0.1](https://github.com/gorhom/showcase-template/compare/v2.0.0...v2.0.1)
+## [v2.0.2](https://github.com/gorhom/showcase-template/compare/v2.0.1...v2.0.2)
+
+#### Improvements
+
+- chore: export ShowcaseScreenType type ([3722714](https://github.com/gorhom/showcase-template/commit/3722714c623786eaf700c51926e4fa449c21adff)).
+- chore: updated label props ([db98dbc](https://github.com/gorhom/showcase-template/commit/db98dbc032fbe09a92d4e99a5bae122ff5d35d8c)).
+
+## [v2.0.1](https://github.com/gorhom/showcase-template/compare/v2.0.0...v2.0.1) - 2021-03-21
 
 #### Improvements
 
