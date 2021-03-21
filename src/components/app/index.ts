@@ -1,2 +1,2 @@
 export { App } from './App';
-export { ExampleScreenType } from './types';
+export type { ExampleScreenType } from './types';
