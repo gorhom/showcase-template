@@ -82,7 +82,7 @@ export const TileList: FC<TileListProps> = ({
       contentContainerStyle={styles.contentContainer}
       data={data}
       stickyHeaderIndices={[0]}
-      keyExtractor={(item) => item.title}
+      keyExtractor={item => item.title}
       renderItem={renderItem}
       ListHeaderComponent={renderHeader}
       ListFooterComponent={renderFooter}

@@ -45,7 +45,7 @@ export const App: FC<AppProps> = ({ data, ...rest }) => {
             {() => <TileList data={data} {...rest} />}
           </Stack.Screen>
 
-          {screens.map((item) => (
+          {screens.map(item => (
             <Stack.Screen
               key={item.slug}
               name={item.slug}

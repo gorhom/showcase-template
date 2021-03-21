@@ -11,7 +11,7 @@ export const Footer: FC<FooterProps> = ({ username, url = '' }) => {
   //#region callbacks
   const handleOnPress = () => {
     Linking.canOpenURL(url)
-      .then((canOpen) => {
+      .then(canOpen => {
         if (canOpen) {
           Linking.openURL(url);
         }

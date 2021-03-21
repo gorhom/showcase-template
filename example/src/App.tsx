@@ -3,7 +3,7 @@ import { Alert, View } from 'react-native';
 import { ShowcaseApp } from '@gorhom/showcase-template';
 
 const Screen = () => {
-  return <View></View>;
+  return <View />;
 };
 
 const data = [
