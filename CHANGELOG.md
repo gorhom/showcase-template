@@ -1,6 +1,12 @@
 # Changelog
 
-## [v2.0.0](https://github.com/gorhom/showcase-template/compare/v1.0.2...v2.0.0)
+## [v2.0.1](https://github.com/gorhom/showcase-template/compare/v2.0.0...v2.0.1)
+
+#### Improvements
+
+- chore: copy .d.ts to lib ([29b424e](https://github.com/gorhom/showcase-template/commit/29b424e8ea0b9289b6ad836fb4c452d93064f87a)).
+
+## [v2.0.0](https://github.com/gorhom/showcase-template/compare/v1.0.2...v2.0.0) - 2021-03-21
 
 #### Features
 
