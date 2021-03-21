@@ -1,12 +1,14 @@
 import type React from 'react';
 import type { TileListProps } from '../tileList';
 import type { ExampleType, ExampleSectionType } from '../../types';
+import type { StackNavigationOptions } from '@react-navigation/stack';
 
 export interface ExampleScreenType extends ExampleType {
   getScreen: () => React.ComponentType<any>;
+  screenOptions?: StackNavigationOptions;
 }
 
-interface ExampleScreenSectionType extends ExampleSectionType {
+export interface ExampleScreenSectionType extends ExampleSectionType {
   title: string;
   data: ExampleScreenType[];
 }

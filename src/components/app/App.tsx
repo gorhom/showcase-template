@@ -41,7 +41,10 @@ export const App: FC<AppProps> = ({ data, ...rest }) => {
       <StatusBar barStyle={statusBarStyle} />
       <NavigationContainer ref={navigationRef} theme={theme}>
         <Stack.Navigator>
-          <Stack.Screen name="showcase" options={{ headerShown: false }}>
+          <Stack.Screen
+            name="showcase"
+            options={{ title: 'Main', headerShown: false }}
+          >
             {() => <TileList data={data} {...rest} />}
           </Stack.Screen>
 
