@@ -1,6 +1,12 @@
 # Changelog
 
-## [v2.0.2](https://github.com/gorhom/showcase-template/compare/v2.0.1...v2.0.2)
+## [v2.0.3](https://github.com/gorhom/showcase-template/compare/v2.0.2...v2.0.3)
+
+#### Improvements
+
+- chore: updated label props ([2a0e3a3](https://github.com/gorhom/showcase-template/commit/2a0e3a3603ad03cbeaea54ed20e72f1a71ccb5c9)).
+
+## [v2.0.2](https://github.com/gorhom/showcase-template/compare/v2.0.1...v2.0.2) - 2021-03-21
 
 #### Improvements
 
