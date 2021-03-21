@@ -1,1 +1,1 @@
-export { default } from './ShowcaseTile';
+export { Tile } from './Tile';

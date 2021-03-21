@@ -1,1 +1,1 @@
-export { default } from './ShowcaseFooter';
+export { Footer } from './Footer';

@@ -1,31 +1,41 @@
-import { StyleSheet, Insets } from 'react-native';
-import { ThemeType } from '../../types';
+import { useMemo } from 'react';
+import { StyleSheet } from 'react-native';
+import { useTheme } from '../../theme';
 
-export const createStyles = (theme: ThemeType, safeInsets?: Insets) =>
-  StyleSheet.create({
-    container: {
-      backgroundColor: theme === 'dark' ? 'black' : 'white',
-      paddingBottom: 24,
-      paddingTop: Math.max(safeInsets?.top ?? 0, 24),
-    },
-    version: {
-      alignSelf: 'flex-start',
-      backgroundColor: theme === 'dark' ? '#111' : '#EEEEEE',
-      borderRadius: 12,
-      paddingHorizontal: 6,
-      paddingVertical: 3,
-      color: theme === 'dark' ? 'white' : 'black',
-      fontSize: 12,
-      overflow: 'hidden',
-    },
-    name: {
-      color: theme === 'dark' ? 'white' : 'black',
-      fontSize: 34,
-      fontWeight: '600',
-      marginBottom: 12,
-    },
-    description: {
-      color: theme === 'dark' ? '#d3d3d3' : '#2C2C2C',
-      fontSize: 16,
-    },
-  });
+export const useStyles = (safeTopInset: number = 0) => {
+  const { colors } = useTheme();
+  return useMemo(
+    () =>
+      StyleSheet.create({
+        container: {
+          backgroundColor: colors.background,
+          paddingBottom: 24,
+          paddingTop: Math.max(safeTopInset, 24),
+        },
+        version: {
+          alignSelf: 'flex-start',
+          backgroundColor: colors.secondaryCard,
+          borderRadius: 12,
+          paddingHorizontal: 6,
+          paddingVertical: 3,
+          fontSize: 12,
+          overflow: 'hidden',
+        },
+        name: {
+          fontSize: 34,
+          fontWeight: '600',
+          marginBottom: 12,
+        },
+        description: {
+          color: colors.secondaryText,
+          fontSize: 16,
+        },
+      }),
+    [
+      colors.background,
+      colors.secondaryCard,
+      colors.secondaryText,
+      safeTopInset,
+    ]
+  );
+};

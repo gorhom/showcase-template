@@ -1,4 +1,4 @@
-package com.ShowcaseTemplateExample;
+package dev.gorhom.showcasetemplate;
 
 import android.app.Application;
 import android.content.Context;

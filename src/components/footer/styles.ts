@@ -1,13 +1,22 @@
+import { useMemo } from 'react';
 import { StyleSheet } from 'react-native';
-import { ThemeType } from '../../types';
+import { useTheme } from '../../theme';
 
-export const createStyles = (theme: ThemeType) =>
-  StyleSheet.create({
-    container: {
-      paddingTop: 24,
-    },
-    name: {
-      color: theme === 'dark' ? 'white' : 'black',
-      fontSize: 14,
-    },
-  });
+export const useStyles = () => {
+  const { colors } = useTheme();
+  return useMemo(
+    () =>
+      StyleSheet.create({
+        container: {
+          paddingTop: 24,
+        },
+        footer: {
+          fontSize: 14,
+        },
+        username: {
+          color: colors.primary,
+        },
+      }),
+    [colors.primary]
+  );
+};

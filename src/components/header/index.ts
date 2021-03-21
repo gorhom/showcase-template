@@ -1,1 +1,1 @@
-export { default } from './ShowcaseHeader';
+export { Header } from './Header';

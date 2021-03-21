@@ -1,4 +1,4 @@
-package com.ShowcaseTemplateExample;
+package dev.gorhom.showcasetemplate;
 
 import com.facebook.react.ReactActivity;
 
