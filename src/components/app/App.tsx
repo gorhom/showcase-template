@@ -11,7 +11,11 @@ import type { AppProps, ExampleScreenType } from './types';
 
 const Stack = createStackNavigator();
 
-export const App: FC<AppProps> = ({ data, ...rest }) => {
+export const App: FC<AppProps> = ({
+  initialScreen = 'showcase',
+  data,
+  ...rest
+}) => {
   const navigationRef = useRef<NavigationContainerRef>(null);
 
   //#region hooks
@@ -40,7 +44,7 @@ export const App: FC<AppProps> = ({ data, ...rest }) => {
     <>
       <StatusBar barStyle={statusBarStyle} />
       <NavigationContainer ref={navigationRef} theme={theme}>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName={initialScreen}>
           <Stack.Screen
             name="showcase"
             options={{ title: 'Main', headerShown: false }}
@@ -52,7 +56,11 @@ export const App: FC<AppProps> = ({ data, ...rest }) => {
             <Stack.Screen
               key={item.slug}
               name={item.slug}
-              options={{ title: item.name, headerShown: true }}
+              options={{
+                title: item.name,
+                headerShown: true,
+                ...item.screenOptions,
+              }}
               getComponent={item.getScreen}
             />
           ))}

@@ -14,5 +14,6 @@ export interface ExampleScreenSectionType extends ExampleSectionType {
 }
 
 export interface AppProps extends Omit<TileListProps, 'data'> {
+  initialScreen?: string;
   data: Array<ExampleScreenSectionType>;
 }
