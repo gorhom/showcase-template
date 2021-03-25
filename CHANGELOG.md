@@ -1,6 +1,12 @@
 # Changelog
 
-## [v2.0.3](https://github.com/gorhom/showcase-template/compare/v2.0.2...v2.0.3)
+## [v2.0.4](https://github.com/gorhom/showcase-template/compare/v2.0.3...v2.0.4)
+
+#### Improvements
+
+- chore: added initialScreen prop ([67cf122](https://github.com/gorhom/showcase-template/commit/67cf12224adefd46b2cbaf43033a18c25f7c3d6a)).
+
+## [v2.0.3](https://github.com/gorhom/showcase-template/compare/v2.0.2...v2.0.3) - 2021-03-21
 
 #### Improvements
 
