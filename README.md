@@ -1,7 +1,7 @@
 <div align="center">
 <h1>Showcase Template</h1>
 
-[![npm](https://badgen.net/npm/v/@gorhom/showcase-template)](https://www.npmjs.com/package/@gorhom/showcase-template) [![npm](https://badgen.net/npm/license/@gorhom/showcase-template)](https://www.npmjs.com/package/@gorhom/showcase-template) [![npm](https://badgen.net/npm/types/@gorhom/showcase-template)](https://www.npmjs.com/package/@gorhom/showcase-template)
+[![npm](https://badgen.net/npm/v/@gorhom/showcase-template)](https://www.npmjs.com/package/@gorhom/showcase-template) [![npm](https://badgen.net/npm/license/@gorhom/showcase-template)](https://www.npmjs.com/package/@gorhom/showcase-template) [![npm](https://badgen.net/npm/types/@gorhom/showcase-template)](https://www.npmjs.com/package/@gorhom/showcase-template) [![runs with expo](https://img.shields.io/badge/Runs%20with%20Expo-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.io/)
 
 <img src="./preview.png">
 
@@ -26,6 +26,12 @@ import React from 'react';
 import { Alert } from 'react-native';
 import Showcase from '@gorhom/showcase-template';
 
+const DemoScreen = () => (
+  <View>
+    <ShowcaseLabel>Demo Screen</ShowcaseLabel>
+  </View>
+);
+
 const data = [
   {
     title: 'Group 1',
@@ -33,14 +39,17 @@ const data = [
       {
         name: 'Default',
         slug: 'default',
+        getScreen: () => DemoScreen,
       },
       {
         name: 'Example A',
         slug: 'example-a',
+        getScreen: () => DemoScreen,
       },
       {
         name: 'Example B',
         slug: 'example-b',
+        getScreen: () => DemoScreen,
       },
     ],
   },
@@ -50,20 +59,20 @@ const data = [
       {
         name: 'Example C',
         slug: 'example-c',
+        getScreen: () => DemoScreen,
       },
       {
         name: 'Example D',
         slug: 'example-d',
+        getScreen: () => DemoScreen,
       },
     ],
   },
 ];
 
 export default function App() {
-  const handleOnPress = (slug: string) => Alert.alert('Example Selected', slug);
   return (
     <Showcase
-      theme="dark"
       version="0.0.0"
       name="Awesome Library"
       description="It can do anything 🤯"
@@ -72,7 +81,6 @@ export default function App() {
         url: 'https://twitter.com/gorhom',
       }}
       data={data}
-      handleOnPress={handleOnPress}
     />
   );
 }
@@ -88,10 +96,10 @@ export default function App() {
 
 ## License
 
-MIT
+[MIT](./LICENSE)
 
 ---
 
 <p align="center">
-<a href="https://twitter.com/gorhom"><img src="./logo.png"></a>
+<a href="https://gorhom.dev" target="_blank"><img height="18" alt="Mo Gorhom" src="./logo.png"></a>
 </p>
