@@ -8,6 +8,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { TileList } from '../tileList';
 import { darkTheme, lightTheme } from '../../theme';
 import type { AppProps, ExampleScreenType } from './types';
+import { TileDimensionsProvider } from '../../providers';
 
 const Stack = createStackNavigator();
 
@@ -41,7 +42,7 @@ export const App: FC<AppProps> = ({
   );
   //#endregion
   return (
-    <>
+    <TileDimensionsProvider>
       <StatusBar barStyle={statusBarStyle} />
       <NavigationContainer ref={navigationRef} theme={theme}>
         <Stack.Navigator initialRouteName={initialScreen}>
@@ -66,6 +67,6 @@ export const App: FC<AppProps> = ({
           ))}
         </Stack.Navigator>
       </NavigationContainer>
-    </>
+    </TileDimensionsProvider>
   );
 };

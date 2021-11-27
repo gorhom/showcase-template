@@ -1,17 +1,16 @@
 import { useMemo } from 'react';
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { useTileDimensions } from '../../hooks';
 
-const SCREEN_WIDTH = Dimensions.get('window').width;
-const PARENT_CONTAINER_WIDTH = SCREEN_WIDTH - 24 * 2;
-const ITEM_WIDTH = PARENT_CONTAINER_WIDTH / 2 - 6;
+export const useStyles = (isLarge: boolean) => {
+  const { regular, large } = useTileDimensions();
 
-export const useStyles = (isLarge: boolean) =>
-  useMemo(
+  return useMemo(
     () =>
       StyleSheet.create({
         touchable: {
           minHeight: 76,
-          width: isLarge ? PARENT_CONTAINER_WIDTH : ITEM_WIDTH,
+          width: isLarge ? large : regular,
         },
         label: {
           fontSize: 20,
@@ -19,5 +18,6 @@ export const useStyles = (isLarge: boolean) =>
           lineHeight: 26,
         },
       }),
-    [isLarge]
+    [isLarge, large, regular]
   );
+};
