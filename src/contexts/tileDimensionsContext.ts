@@ -1,6 +1,6 @@
 import { createContext } from 'react';
 
-interface TileDimensionsType {
+export interface TileDimensionsType {
   regular: number;
   large: number;
 }
