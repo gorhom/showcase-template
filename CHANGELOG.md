@@ -1,6 +1,17 @@
 # Changelog
 
-## [v2.0.4](https://github.com/gorhom/showcase-template/compare/v2.0.3...v2.0.4)
+## [v2.1.0](https://github.com/gorhom/showcase-template/compare/v2.0.4...v2.1.0)
+
+#### Features
+
+- feat: added layout responsiveness support ([0a227ba](https://github.com/gorhom/showcase-template/commit/0a227ba2867d364abcf3a78ef989b0c4a3bed712)).
+
+#### Improvements
+
+- chore: updated the example to use Expo ([671c52b](https://github.com/gorhom/showcase-template/commit/671c52bcabb612c006c3f29249a2b2db6f21310d)).
+- refactor: renamed components ([2c05045](https://github.com/gorhom/showcase-template/commit/2c050455b3d6df348866547f017dd96b7febf273)).
+
+## [v2.0.4](https://github.com/gorhom/showcase-template/compare/v2.0.3...v2.0.4) - 2021-03-25
 
 #### Improvements
 
