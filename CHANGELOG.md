@@ -1,6 +1,16 @@
 # Changelog
 
-## [v2.1.0](https://github.com/gorhom/showcase-template/compare/v2.0.4...v2.1.0)
+## [v2.1.1](https://github.com/gorhom/showcase-template/compare/v2.1.0...v2.1.1)
+
+#### Improvements
+
+- chore: updated dependencies ([a7f0a4e](https://github.com/gorhom/showcase-template/commit/a7f0a4e120f2f4cb3404c0deadb3f1c2572ffd3d)).
+
+#### Documentations
+
+- docs: updated readme file ([3cefbcc](https://github.com/gorhom/showcase-template/commit/3cefbcca27349665aa47bd5bd38cbd56aa6c548a)).
+
+## [v2.1.0](https://github.com/gorhom/showcase-template/compare/v2.0.4...v2.1.0) - 2021-11-27
 
 #### Features
 
