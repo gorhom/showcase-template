@@ -1,6 +1,12 @@
 # Changelog
 
-## [v2.1.1](https://github.com/gorhom/showcase-template/compare/v2.1.0...v2.1.1)
+## [v2.1.2](https://github.com/gorhom/showcase-template/compare/v2.1.1...v2.1.2)
+
+#### Fixes
+
+- fix: bob builder config ([6fbcc18](https://github.com/gorhom/showcase-template/commit/6fbcc18de358f29690cd210eaf6eedc6eaf2ea3a)).
+
+## [v2.1.1](https://github.com/gorhom/showcase-template/compare/v2.1.0...v2.1.1) - 2023-09-15
 
 #### Improvements
 
