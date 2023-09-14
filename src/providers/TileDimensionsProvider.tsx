@@ -15,9 +15,10 @@ export const TileDimensionsProvider = ({
 
   //#region variables
   const parentContainerWidth = useMemo(() => width - 24 * 2, [width]);
-  const itemWidth = useMemo(() => parentContainerWidth / 2 - 6, [
-    parentContainerWidth,
-  ]);
+  const itemWidth = useMemo(
+    () => parentContainerWidth / 2 - 6,
+    [parentContainerWidth]
+  );
   const contextValue = useMemo(
     () => ({
       regular: itemWidth,

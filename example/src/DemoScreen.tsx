@@ -1,13 +1,16 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { ShowcaseLabel } from '@gorhom/showcase-template';
-import { useRoute } from '@react-navigation/core';
+import {
+  ShowcaseExampleScreenProps,
+  ShowcaseLabel,
+} from '@gorhom/showcase-template';
 
-export const DemoScreen = () => {
-  const { name } = useRoute();
+export const DemoScreen = (props: ShowcaseExampleScreenProps) => {
   return (
     <View style={styles.container}>
-      <ShowcaseLabel style={styles.text}>{name}</ShowcaseLabel>
+      <ShowcaseLabel style={styles.text}>
+        {props.route.params.name}
+      </ShowcaseLabel>
     </View>
   );
 };

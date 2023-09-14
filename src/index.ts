@@ -4,4 +4,7 @@ export { ShowcaseLabel } from './components/showcaseLabel';
 
 export { useShowcaseTheme } from './hooks';
 
-export type { ShowcaseExampleScreenType } from './types';
+export type {
+  ShowcaseExampleScreenType,
+  ShowcaseExampleScreenProps,
+} from './types';

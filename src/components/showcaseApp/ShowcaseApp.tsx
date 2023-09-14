@@ -1,35 +1,26 @@
-import React, { FC, ReactNode, useMemo, useRef } from 'react';
-import { StatusBar, useColorScheme, View } from 'react-native';
-import {
-  NavigationContainer,
-  NavigationContainerRef,
-} from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import React, { FC, ReactNode, useEffect, useMemo } from 'react';
+import { useColorScheme, View, StatusBar } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ShowcaseTileList } from '../showcaseTileList';
 import { TileDimensionsProvider } from '../../providers';
 import { darkTheme, lightTheme } from '../../theme';
 import type { ShowcaseAppProps } from './types';
-import { ShowcaseExampleScreenType } from 'src/types';
+import type { ShowcaseExampleScreenType } from '../../types';
 import { styles } from './styles';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const ShowcaseAppComponent: FC<ShowcaseAppProps> = ({
   initialScreen = 'showcase',
   data,
   ...rest
 }) => {
-  const navigationRef = useRef<NavigationContainerRef>(null);
-
   //#region hooks
   const colorScheme = useColorScheme();
   //#endregion
 
   //#region variables
-  const statusBarStyle = useMemo(
-    () => (colorScheme === 'dark' ? 'light-content' : 'dark-content'),
-    [colorScheme]
-  );
   const theme = useMemo(
     () => (colorScheme === 'dark' ? darkTheme : lightTheme),
     [colorScheme]
@@ -43,33 +34,44 @@ const ShowcaseAppComponent: FC<ShowcaseAppProps> = ({
     [data]
   );
   //#endregion
-  return (
-    <>
-      <StatusBar barStyle={statusBarStyle} />
-      <NavigationContainer ref={navigationRef} theme={theme}>
-        <Stack.Navigator initialRouteName={initialScreen}>
-          <Stack.Screen
-            name="showcase"
-            options={{ title: 'Main', headerShown: false }}
-          >
-            {() => <ShowcaseTileList data={data} {...rest} />}
-          </Stack.Screen>
 
-          {screens.map(item => (
-            <Stack.Screen
-              key={item.slug}
-              name={item.slug}
-              options={{
-                title: item.name,
-                headerShown: true,
-                ...item.screenOptions,
-              }}
-              getComponent={item.getScreen}
-            />
-          ))}
-        </Stack.Navigator>
-      </NavigationContainer>
-    </>
+  //#region effects
+  useEffect(() => {
+    StatusBar.setBarStyle(
+      colorScheme === 'dark' ? 'light-content' : 'dark-content',
+      true
+    );
+  }, [colorScheme]);
+  //#endregion
+  return (
+    <NavigationContainer theme={theme}>
+      <Stack.Navigator initialRouteName={initialScreen}>
+        <Stack.Screen
+          name="showcase"
+          options={{ title: 'Main', headerShown: false }}
+        >
+          {() => <ShowcaseTileList data={data} {...rest} />}
+        </Stack.Screen>
+
+        {screens.map(item => (
+          <Stack.Screen
+            key={item.slug}
+            name={item.slug}
+            options={{
+              title: item.title ?? item.name,
+              headerShown: true,
+              ...item.screenOptions,
+            }}
+            initialParams={{
+              name: item.name,
+              slug: item.slug,
+              title: item.title,
+            }}
+            getComponent={item.getScreen}
+          />
+        ))}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

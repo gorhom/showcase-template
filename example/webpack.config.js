@@ -1,5 +1,5 @@
-const path = require('path');
 const createExpoWebpackConfigAsync = require('@expo/webpack-config');
+const path = require('path');
 const { resolver } = require('./metro.config');
 
 const root = path.resolve(__dirname, '..');
@@ -17,7 +17,8 @@ module.exports = async function (env, argv) {
   // We need to make sure that only one version is loaded for peerDependencies
   // So we alias them to the versions in example's node_modules
   Object.assign(config.resolve.alias, {
-    ...resolver.extraNodeModules,
+    react: path.join(node_modules, 'react'),
+    'react-native': path.join(node_modules, 'react-native'),
     'react-native-web': path.join(node_modules, 'react-native-web'),
   });
 

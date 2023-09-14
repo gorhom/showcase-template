@@ -9,6 +9,7 @@ const data = [
       {
         name: 'Default',
         slug: 'default',
+        title: 'Group 1 : Default',
         getScreen: () => DemoScreen,
       },
       {
