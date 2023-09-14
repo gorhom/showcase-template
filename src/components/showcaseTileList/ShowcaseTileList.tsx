@@ -47,7 +47,7 @@ export const ShowcaseTileList: FC<ShowcaseTileListProps> = ({
   //#region callbacks
   const handleOnPress = useCallback((slug: string) => {
     requestAnimationFrame(() => {
-      navigate(slug);
+      navigate(slug as never);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
