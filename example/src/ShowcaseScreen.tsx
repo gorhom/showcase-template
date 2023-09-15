@@ -1,10 +1,14 @@
 import React from 'react';
-import { ShowcaseApp } from '@gorhom/showcase-template';
+import {
+  ShowcaseApp,
+  ShowcaseExampleScreenSectionType,
+} from '@gorhom/showcase-template';
 import { DemoScreen } from './DemoScreen';
 
-const data = [
+const data: Array<ShowcaseExampleScreenSectionType> = [
   {
     title: 'Group 1',
+    collapsible: false,
     data: [
       {
         name: 'Default',
@@ -41,6 +45,7 @@ const data = [
   },
   {
     title: 'Group 3',
+    collapsed: true,
     data: [
       {
         name: 'Example E',

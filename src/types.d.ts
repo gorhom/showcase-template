@@ -1,7 +1,4 @@
-import type {
-  NativeStackNavigationProp,
-  NativeStackScreenProps,
-} from '@react-navigation/native-stack';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
 export interface ShowcaseExampleType {
   name: string;
@@ -12,6 +9,8 @@ export interface ShowcaseExampleType {
 export interface ShowcaseExampleSectionType {
   title: string;
   data: ShowcaseExampleType[];
+  collapsible?: boolean;
+  collapsed?: boolean;
 }
 
 export interface ShowcaseExampleScreenType extends ShowcaseExampleType {
