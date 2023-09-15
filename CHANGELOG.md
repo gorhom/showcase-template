@@ -1,6 +1,20 @@
 # Changelog
 
-## [v2.1.2](https://github.com/gorhom/showcase-template/compare/v2.1.1...v2.1.2)
+## [v3.0.0](https://github.com/gorhom/showcase-template/compare/v2.1.2...v3.0.0)
+
+#### Features
+
+- feat: added collapsible functionality ([e166abc](https://github.com/gorhom/showcase-template/commit/e166abcc94a6b9c5c8bf68eeedb7c67b3c89c7e5)).
+
+#### Improvements
+
+- chore: updated linter and package.json ([4e7e467](https://github.com/gorhom/showcase-template/commit/4e7e46789b691e247fcdc6c7ba08ec58d5c493f5)).
+
+#### Documentations
+
+- docs: updated readme file ([80821fc](https://github.com/gorhom/showcase-template/commit/80821fcb5b7be9dd8c1166b6eab7842e53b4445a)).
+
+## [v2.1.2](https://github.com/gorhom/showcase-template/compare/v2.1.1...v2.1.2) - 2023-09-15
 
 #### Fixes
 
