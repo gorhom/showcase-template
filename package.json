@@ -11,17 +11,6 @@
     "src",
     "lib"
   ],
-  "scripts": {
-    "typescript": "tsc --noEmit",
-    "lint": "eslint --ext .js,.ts,.tsx . --fix",
-    "build": "bob build && yarn copy-dts && yarn delete-dts",
-    "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" lib/typescript",
-    "delete-dts": "find ./lib/commonjs -name '*.d.js*' -delete && find ./lib/module -name '*.d.js*' -delete",
-    "release": "release-it",
-    "example": "yarn --cwd example",
-    "pods": "cd example/ios && node -e \"process.exit(require('os').platform() === 'darwin')\" || pod install",
-    "bootstrap": "yarn example && yarn && yarn pods"
-  },
   "keywords": [
     "showcase",
     "showcase-template",
@@ -30,12 +19,22 @@
     "android"
   ],
   "repository": "https://github.com/gorhom/showcase-template",
-  "author": "Mo Gorhom",
+  "author": "Mo Gorhom (https://gorhom.dev)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/gorhom/showcase-template/issues"
   },
   "homepage": "https://github.com/gorhom/showcase-template#readme",
+  "scripts": {
+    "typescript": "tsc --skipLibCheck --noEmit",
+    "lint": "eslint --ext .js,.ts,.tsx . --fix",
+    "build": "bob build && yarn copy-dts && yarn delete-dts",
+    "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" lib/typescript",
+    "delete-dts": "find ./lib/commonjs -name '*.d.js*' -delete && find ./lib/module -name '*.d.js*' -delete",
+    "release": "rm -rf lib && yarn build && release-it",
+    "example": "yarn --cwd example",
+    "bootstrap": "yarn install && yarn example"
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-conventional": "^17.7.0",
