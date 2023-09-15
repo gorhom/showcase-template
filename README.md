@@ -85,14 +85,9 @@ export default function App() {
   );
 }
 ```
+## Sponsor & Support
 
-## Built With ❤️
-
-- [@react-native-community/bob](https://github.com/react-native-community/bob)
-
-## Author
-
-- [Mo Gorhom](https://twitter.com/gorhom)
+To keep this library maintained and up-to-date please consider [sponsoring it on GitHub](https://github.com/sponsors/gorhom). Or if you are looking for a private support or help in customizing the experience, then reach out to me on Twitter [@gorhom](https://twitter.com/gorhom).
 
 ## License
 
@@ -101,5 +96,10 @@ export default function App() {
 ---
 
 <p align="center">
-<a href="https://gorhom.dev" target="_blank"><img height="18" alt="Mo Gorhom" src="./logo.png"></a>
+  <a href="https://gorhom.dev/#gh-light-mode-only" target="_blank">
+    <img height="18" alt="Mo Gorhom" src="./mogorhom-light.png">
+  </a>
+  <a href="https://gorhom.dev/#gh-dark-mode-only" target="_blank">
+    <img height="18" alt="Mo Gorhom" src="./mogorhom-dark.png">
+  </a>
 </p>
