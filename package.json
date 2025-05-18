@@ -1,6 +1,6 @@
 {
   "name": "@gorhom/showcase-template",
-  "version": "3.0.2",
+  "version": "4.0.0",
   "description": "A React Native template that helps developers to showcase their amazing libraries examples.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",

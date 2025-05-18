@@ -1,6 +1,16 @@
 # Changelog
 
-## [v3.0.2](https://github.com/gorhom/showcase-template/compare/v3.0.0...v3.0.2)
+## [v4.0.0](https://github.com/gorhom/showcase-template/compare/v3.0.2...v4.0.0)
+
+#### Features
+
+- feat: updated animation and added support for featured tile ([5d1d0ab](https://github.com/gorhom/showcase-template/commit/5d1d0ab5be5126e820bf017d24972e9a5db0d132)).
+
+#### Improvements
+
+- chore: updated dependencies ([216d343](https://github.com/gorhom/showcase-template/commit/216d343c8f93ed31087c9b01166780b956fb6ab0)).
+
+## [v3.0.2](https://github.com/gorhom/showcase-template/compare/v3.0.0...v3.0.2) - 2023-09-15
 
 ## [v3.0.0](https://github.com/gorhom/showcase-template/compare/v2.1.2...v3.0.0) - 2023-09-15
 
