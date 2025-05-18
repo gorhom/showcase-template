@@ -1,10 +1,11 @@
 import React, { FC, useCallback, useMemo } from 'react';
-import { LayoutChangeEvent, Pressable } from 'react-native';
+import { LayoutChangeEvent, Pressable, View } from 'react-native';
 import Animated, {
+  Easing,
   interpolate,
   useAnimatedStyle,
   useSharedValue,
-  withSpring,
+  withTiming,
 } from 'react-native-reanimated';
 import { ShowcaseTile } from '../showcaseTile';
 import { ShowcaseLabel } from '../showcaseLabel';
@@ -29,13 +30,9 @@ export const ShowcaseTileGroup: FC<ShowcaseTileGroupProps> = ({
   const handleHeaderPress = useCallback(() => {
     let nextVisibility = !visibility.value;
     visibility.value = nextVisibility;
-    visibilityIndex.value = withSpring(nextVisibility ? 1 : 0, {
-      mass: 1,
-      damping: 50,
-      stiffness: 200,
-      overshootClamping: true,
-      restDisplacementThreshold: 0.01,
-      restSpeedThreshold: 2,
+    visibilityIndex.value = withTiming(nextVisibility ? 1 : 0, {
+      duration: 450,
+      easing: Easing.out(Easing.exp),
     });
   }, [visibility, visibilityIndex]);
   const handleContainerLayout = useCallback(
@@ -44,9 +41,6 @@ export const ShowcaseTileGroup: FC<ShowcaseTileGroupProps> = ({
         layout: { height },
       },
     }: LayoutChangeEvent) => {
-      if (initialHeight.value !== -1) {
-        return;
-      }
       initialHeight.value = height;
     },
     [initialHeight]
@@ -63,7 +57,7 @@ export const ShowcaseTileGroup: FC<ShowcaseTileGroupProps> = ({
   //#region styles
   const styles = useStyles();
   const containerStyle = useAnimatedStyle(() => {
-    let height;
+    let height: number | undefined = undefined;
     if (initialHeight.value !== -1) {
       height = interpolate(
         visibilityIndex.value,
@@ -73,7 +67,7 @@ export const ShowcaseTileGroup: FC<ShowcaseTileGroupProps> = ({
     }
     return {
       ...styles.container,
-      height: height,
+      height,
     };
   }, [visibilityIndex, initialHeight]);
   //#endregion
@@ -96,16 +90,18 @@ export const ShowcaseTileGroup: FC<ShowcaseTileGroupProps> = ({
         renderTitle
       )}
 
-      <Animated.View style={containerStyle} onLayout={handleContainerLayout}>
-        {data.map((item, index) => (
-          <ShowcaseTile
-            key={`item-${item.slug}`}
-            index={index}
-            isLarge={index === data.length - 1 && index % 2 === 0}
-            onPress={onPress}
-            {...item}
-          />
-        ))}
+      <Animated.View style={containerStyle}>
+        <View style={styles.contentContainer} onLayout={handleContainerLayout}>
+          {data.map((item, index) => (
+            <ShowcaseTile
+              key={`item-${item.slug}`}
+              index={index}
+              isLarge={index === data.length - 1 && index % 2 === 0}
+              onPress={onPress}
+              {...item}
+            />
+          ))}
+        </View>
       </Animated.View>
     </>
   );

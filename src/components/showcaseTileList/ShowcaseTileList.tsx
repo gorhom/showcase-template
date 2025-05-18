@@ -11,6 +11,7 @@ import type {
   ShowcaseExampleType,
 } from '../../types';
 import type { ShowcaseTileListProps } from './types';
+import { ShowcaseTile } from '../showcaseTile/Tile';
 
 export const ShowcaseTileList: FC<ShowcaseTileListProps> = ({
   name,
@@ -66,9 +67,22 @@ export const ShowcaseTileList: FC<ShowcaseTileListProps> = ({
     item,
     index,
   }: {
-    item: ShowcaseExampleSectionType;
+    item: ShowcaseExampleSectionType | ShowcaseExampleType;
     index: number;
   }) => {
+
+    if ('name' in item) {
+      return (
+        <ShowcaseTile
+          key={`item-${item.slug}`}
+          index={index}
+          isLarge={true}
+          onPress={handleOnPress}
+          {...item}
+        />
+      )
+    }
+
     return (
       <TileGroup
         key={`group-#${index}-${item.title}`}

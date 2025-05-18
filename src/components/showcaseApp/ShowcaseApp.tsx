@@ -28,6 +28,11 @@ const ShowcaseAppComponent: FC<ShowcaseAppProps> = ({
   const screens = useMemo(
     () =>
       data.reduce<ShowcaseExampleScreenType[]>((result, item) => {
+        if ('name' in item) {
+          result.push(item as ShowcaseExampleScreenType);
+          return result
+        }
+
         result.push(...item.data);
         return result;
       }, []),

@@ -2,10 +2,17 @@ import React from 'react';
 import {
   ShowcaseApp,
   ShowcaseExampleScreenSectionType,
+  ShowcaseExampleScreenType,
 } from '@gorhom/showcase-template';
 import { DemoScreen } from './DemoScreen';
 
-const data: Array<ShowcaseExampleScreenSectionType> = [
+const data: Array<ShowcaseExampleScreenSectionType | ShowcaseExampleScreenType> = [
+  {
+    name: 'Featured',
+    slug: 'featured',
+    title: 'Featured',
+    getScreen: () => DemoScreen,
+  },
   {
     title: 'Group 1',
     collapsible: false,

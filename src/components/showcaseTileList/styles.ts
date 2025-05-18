@@ -9,7 +9,6 @@ export const useStyles = (safeBottomInset: number = 0) => {
       StyleSheet.create({
         container: {
           flex: 1,
-          backgroundColor: colors.background,
         },
         contentContainer: {
           paddingHorizontal: 24,

@@ -8,10 +8,15 @@ export const useStyles = () => {
     () =>
       StyleSheet.create({
         container: {
+          overflow: 'hidden',
+        },
+        contentContainer: {
+          position: 'absolute',
+          left: 0,
+          right: 0,
           flexDirection: 'row',
           flexWrap: 'wrap',
           justifyContent: 'space-between',
-          overflow: 'hidden',
         },
         header: {
           flexDirection: 'row',
