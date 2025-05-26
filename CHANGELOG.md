@@ -1,6 +1,12 @@
 # Changelog
 
-## [v4.0.0](https://github.com/gorhom/showcase-template/compare/v3.0.2...v4.0.0)
+## [v4.0.1](https://github.com/gorhom/showcase-template/compare/v4.0.0...v4.0.1)
+
+#### Fixes
+
+- fix: touchables on Android with Fabric arch ([83fbc1a](https://github.com/gorhom/showcase-template/commit/83fbc1ac46cc6042331ae81045bba450bbea43da)).
+
+## [v4.0.0](https://github.com/gorhom/showcase-template/compare/v3.0.2...v4.0.0) - 2025-05-18
 
 #### Features
 
