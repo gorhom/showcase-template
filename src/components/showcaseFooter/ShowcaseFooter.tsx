@@ -1,5 +1,6 @@
-import React, { FC } from 'react';
-import { View, TouchableOpacity, Linking } from 'react-native';
+import React, { type FC } from 'react';
+import { View, Linking } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { ShowcaseLabel } from '../showcaseLabel';
 import { useStyles } from './styles';
 import type { ShowcaseFooterProps } from './types';

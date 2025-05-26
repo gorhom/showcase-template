@@ -1,5 +1,6 @@
-import React, { FC, useMemo } from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import React, { type FC, useMemo } from 'react';
+import { View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { useStyles } from './styles';
 import type { ShowcaseButtonProps } from './types';
 
